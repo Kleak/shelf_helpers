@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  test_catalog:
     runs-on: ubuntu-latest
     container:
       image: google/dart:latest
@@ -24,6 +24,7 @@ jobs:
         run: dart format --output=none --set-exit-if-changed --line-length 120 .
 
       - name: Analyze project source
+        run: dart analyze --fatal-warnings
 
       - name: Run tests
         run: dart test
