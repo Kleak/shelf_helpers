@@ -21,7 +21,7 @@ jobs:
         run: dart pub get
 
       - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed --line-length 120 .
+        run: dart format --output=none --set-exit-if-changed --line-length 80 .
 
       - name: Analyze project source
         run: dart analyze --fatal-warnings
