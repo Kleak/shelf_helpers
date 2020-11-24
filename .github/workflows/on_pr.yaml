@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test_catalog:
+  test:
     runs-on: ubuntu-latest
     container:
       image: google/dart:latest
