@@ -13,6 +13,21 @@ class TestDeserialize {
 
 void main() {
   group('deserialize', () {
+    test('empty body', () async {
+      TestDeserialize deserializer(Map<String, dynamic> json) {
+        return TestDeserialize(json['i']);
+      }
+
+      final response = await deserializeMiddleware(deserializer)((request) {
+        return null;
+      })(Request(
+        'OPTIONS',
+        Uri.parse('http://localhost:8080/'),
+      ));
+      expect(response.statusCode, HttpStatus.internalServerError);
+      expect(await response.readAsString(), startsWith('FormatException'));
+    });
+
     test('object', () async {
       TestDeserialize deserializer(Map<String, dynamic> json) {
         return TestDeserialize(json['i']);

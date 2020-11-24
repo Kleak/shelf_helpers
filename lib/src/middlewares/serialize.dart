@@ -25,7 +25,7 @@ Middleware serializeMiddleware<T>(Map<String, dynamic> Function(T) serializer) {
           body: json.encode(serializer(object)),
         );
       } catch (e) {
-        return Response.internalServerError(body: e);
+        return Response.internalServerError(body: e.toString());
       }
     };
   };

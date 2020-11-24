@@ -23,7 +23,7 @@ Middleware deserializeMiddleware<T>(
           },
         ));
       } catch (e) {
-        return Response.internalServerError(body: e);
+        return Response.internalServerError(body: e.toString());
       }
     };
   };
