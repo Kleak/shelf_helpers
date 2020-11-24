@@ -10,10 +10,9 @@ class TestSerialize {
 
 void main() {
   final pipeline = Pipeline()
-      .addMiddleware(cors({'Test': 'Test cors'}))
+      .addMiddleware(cors())
       .addMiddleware(serializeMiddleware((TestSerialize data) => {'i': data.i}))
-      .addMiddleware(deserializeMiddleware((data) => TestSerialize(data['i'])))
-      .addMiddleware(cors({'Test': 'Test cors'}));
+      .addMiddleware(deserializeMiddleware((data) => TestSerialize(data['i'])));
 
   final handler = pipeline.addHandler(_echoRequest);
   io.serve(handler, 'localhost', 8080).then((server) {
