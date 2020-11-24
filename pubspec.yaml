@@ -1,0 +1,13 @@
+name: shelf_helpers
+description: A library with log of shelf helpers middleware
+version: 1.0.0-alpha.0
+
+environment:
+  sdk: ">=2.9.3 <3.0.0"
+
+dependencies:
+  shelf: ^0.7.9
+  pedantic: ^1.9.0
+
+dev_dependencies:
+  http:
