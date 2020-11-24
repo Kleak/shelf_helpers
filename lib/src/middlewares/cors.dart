@@ -5,7 +5,8 @@ import 'package:shelf/shelf.dart';
 const _defaultCorsHeader = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers': '${HttpHeaders.contentTypeHeader}, ${HttpHeaders.authorizationHeader}'
+  'Access-Control-Allow-Headers':
+      '${HttpHeaders.contentTypeHeader}, ${HttpHeaders.authorizationHeader}'
 };
 
 /// This [Middleware] will add CORS to you endpoints

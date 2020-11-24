@@ -9,7 +9,8 @@ final deserializeKey = '$shelfHeplersKey/deserialize';
 T getDeserializedObject<T>(Request request) => request.context[deserializeKey];
 
 /// a middleware to deserialize an object using the [deserializer] function
-Middleware deserializeMiddleware<T>(T Function(Map<String, dynamic>) deserializer) {
+Middleware deserializeMiddleware<T>(
+    T Function(Map<String, dynamic>) deserializer) {
   return (Handler innerHandler) {
     return (Request request) async {
       final data = await request.readAsString();

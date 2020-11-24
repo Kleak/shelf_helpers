@@ -1,5 +1,5 @@
 name: shelf_helpers
-description: A library some shelf helpers to not re-invent everything
+description: A library with some shelf helpers to not re-invent everything
 version: 1.0.0-alpha.0
 repository: https://github.com/Kleak/shelf_helpers
 
