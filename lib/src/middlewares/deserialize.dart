@@ -6,7 +6,8 @@ import 'package:shelf_helpers/src/constants.dart';
 final deserializeKey = '$shelfHeplersKey/deserialize';
 
 ///  allow you to get the deserialized object
-T getDeserializedObject<T>(Request request) => request.context[deserializeKey];
+T? getDeserializedObject<T>(Request request) =>
+    request.context[deserializeKey] as T?;
 
 /// a middleware to deserialize an object using the [deserializer] function
 Middleware deserializeMiddleware<T>(

@@ -7,9 +7,12 @@ import 'package:shelf_helpers/src/constants.dart';
 final serializeKey = '$shelfHeplersKey/serialize';
 
 /// helper to serialize an [object]
-Response serializeResponse<T>(T object) => Response(HttpStatus.ok, context: {
-      serializeKey: object,
-    });
+Response serializeResponse<T>(T object) => Response(
+      HttpStatus.ok,
+      context: {
+        serializeKey: object!,
+      },
+    );
 
 /// a middleware to serialize an object using the [serializer] function
 Middleware serializeMiddleware<T>(Map<String, dynamic> Function(T) serializer) {

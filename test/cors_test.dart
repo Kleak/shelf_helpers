@@ -7,26 +7,27 @@ import 'package:test/test.dart';
 void main() {
   group('cors', () {
     test('default', () async {
-      final response = await cors()((_) => null)(
+      final response = await cors()((_) => Future.value(null))(
           Request('OPTIONS', Uri.parse('http://localhost:8080/')));
-      expect(response.statusCode, HttpStatus.ok);
-      expect(
-          response.headers.containsKey('Access-Control-Allow-Origin'), isTrue);
-      expect(
-          response.headers.containsKey('Access-Control-Allow-Methods'), isTrue);
-      expect(
-          response.headers.containsKey('Access-Control-Allow-Headers'), isTrue);
+      expect(response.statusCode, equals(HttpStatus.ok));
+      expect(response.headers.containsKey('Access-Control-Allow-Origin'),
+          equals(true));
+      expect(response.headers.containsKey('Access-Control-Allow-Methods'),
+          equals(true));
+      expect(response.headers.containsKey('Access-Control-Allow-Headers'),
+          equals(true));
     });
 
     test('custom', () async {
       final response = await cors(headers: {'greetings': 'Hello shelf'})(
-          (_) => null)(Request('OPTIONS', Uri.parse('http://localhost:8080/')));
-      expect(response.statusCode, HttpStatus.ok);
-      expect(response.headers.containsKey('greetings'), isTrue);
+              (_) => Future.value(null))(
+          Request('OPTIONS', Uri.parse('http://localhost:8080/')));
+      expect(response.statusCode, equals(HttpStatus.ok));
+      expect(response.headers.containsKey('greetings'), equals(true));
       expect(response.headers.containsKey('Access-Control-Allow-Methods'),
-          isFalse);
+          equals(false));
       expect(response.headers.containsKey('Access-Control-Allow-Headers'),
-          isFalse);
+          equals(false));
     });
   });
 }

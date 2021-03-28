@@ -3,7 +3,7 @@ import 'package:shelf/shelf_io.dart' as io;
 import 'package:shelf_helpers/shelf_helpers.dart';
 
 class TestSerialize {
-  final int i;
+  final int/*!*/ i;
 
   TestSerialize(this.i);
 }

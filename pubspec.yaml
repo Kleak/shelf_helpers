@@ -1,15 +1,15 @@
 name: shelf_helpers
 description: A library with some shelf helpers to not re-invent everything
-version: 1.0.0-alpha.1
+version: 1.0.0
 repository: https://github.com/Kleak/shelf_helpers
 
 environment:
-  sdk: ">=2.9.3 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  shelf: ^0.7.9
+  shelf: ^1.0.0
   pedantic: ^1.9.0
 
 dev_dependencies:
-  http: ^0.12.2
+  http: ^0.13.0
   test: ^1.15.7
