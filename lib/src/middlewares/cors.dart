@@ -1,11 +1,12 @@
 import 'dart:io';
 
 import 'package:shelf/shelf.dart';
+import '../corsheaders.dart';
 
 const _defaultCorsHeader = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-  'Access-Control-Allow-Headers':
+  CORSHeaders.allowedOriginsHeader: '*',
+  CORSHeaders.allowedMethodsHeader: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+  CORSHeaders.allowedHeadersHeader:
       '${HttpHeaders.contentTypeHeader}, ${HttpHeaders.authorizationHeader}'
 };
 
