@@ -6,13 +6,13 @@ extension CORSHeadersExt on HttpHeaders {
 
 //This could be generated with a code builder from https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#cors
 class CORSHeaders {
-  static const String allowedOriginsHeader = 'Access-Control-Allow-Origin';
-  static const String allowedHeadersHeader = 'Access-Control-Allow-Headers';
-  static const String allowedMethodsHeader = 'Access-Control-Allow-Methods';
-  static const String allowedCredentialsHeader =
+  static const String accessControlAllowOriginHeader = 'Access-Control-Allow-Origin';
+  static const String accessControlAllowHeadersHeader = 'Access-Control-Allow-Headers';
+  static const String accessControlAllowMethodsHeader = 'Access-Control-Allow-Methods';
+  static const String accessControlAllowCredentialsHeader =
       'Access-Control-Allow-Credentials';
-  static const String exposableHeadersHeader = 'Access-Control-Expose-Headers';
-  static const String maxAgeHeader = 'Access-Control-Max-Age';
-  static const String requestHeadersHeader = 'Access-Control-Request-Headers';
-  static const String requestMethodHeader = 'Access-Control-Request-Method';
+  static const String accessControlExposeHeadersHeader = 'Access-Control-Expose-Headers';
+  static const String accessControlMaxAgeHeader = 'Access-Control-Max-Age';
+  static const String accessControlRequestHeadersHeader = 'Access-Control-Request-Headers';
+  static const String accessControlRequestMethodHeader = 'Access-Control-Request-Method';
 }
