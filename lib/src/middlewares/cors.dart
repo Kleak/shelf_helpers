@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:shelf/shelf.dart';
-import 'package:shelf_helpers/shelf_helpers.dart';
+import 'package:shelf_helpers/src/corsheaders.dart';
 
 const _defaultCorsHeader = {
   CORSHeaders.accessControlAllowOriginHeader: '*',
