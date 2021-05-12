@@ -3,9 +3,10 @@ import 'package:shelf/shelf.dart';
 import 'package:shelf_helpers/shelf_helpers.dart';
 
 const _defaultCorsHeader = {
-  CORSHeaders.allowedOriginsHeader: '*',
-  CORSHeaders.allowedMethodsHeader: 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-  CORSHeaders.allowedHeadersHeader:
+  CORSHeaders.accessControlAllowOriginHeader: '*',
+  CORSHeaders.accessControlAllowMethodsHeader:
+      'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+  CORSHeaders.accessControlAllowHeadersHeader:
       '${HttpHeaders.contentTypeHeader}, ${HttpHeaders.authorizationHeader}'
 };
 
